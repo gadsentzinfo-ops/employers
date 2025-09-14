@@ -24,12 +24,12 @@
 <h2>AjiraFaster Employer Job Posting</h2>
 <p class="notice">
   ⚠️ <b>Tahadhari ya Kisheria:</b> <b>Kazi ni bure</b> kwa waombaji.  
-  <b>Usilipishe</b> au <b>usidanganye mtu yeyote</b> kupata kazi kupitia <b>AjiraFaster</b>.  
-  Kila mtu atakayejihusisha na kutoza fedha au kudanganya waombaji atachukuliwa <b>hatua kali za kisheria</b> mara tu ikigundulika.  
+  <b>Hakuna udalali</b> au kutoza fedha kwa kupata kazi kupitia <b>AjiraFaster</b>.  
+  Yeyote atakayebainika kutoza fedha au kudanganya waombaji atachukuliwa <b>hatua kali za kisheria</b>.  
   Kwa kutuma fomu hii, unathibitisha kuwa <b>umekubaliana na sheria hizi</b>.
 </p>
 
-<form id="whatsappForm">
+<form action="https://formspree.io/f/xeoldyjg" method="POST">
 
   <label for="employerType">Aina ya Mwajiri</label>
   <select id="employerType" name="employerType" required>
@@ -38,42 +38,19 @@
     <option value="Small Shop / Individual">Duka / Mtu Binafsi</option>
   </select>
 
-  <div id="companyFields" class="hidden">
-    <label for="companyName">Jina la Kampuni</label>
-    <input type="text" id="companyName" name="companyName">
-    <label for="businessReg">Nambari ya Usajili (BRELA/TIN)</label>
-    <input type="text" id="businessReg" name="businessReg">
-    <label for="companyEmail">Barua Pepe ya Kampuni</label>
-    <input type="email" id="companyEmail" name="companyEmail">
-    <label for="companyPhone">Simu ya Kampuni</label>
-    <input type="text" id="companyPhone" name="companyPhone">
-    <label for="companyWebsite">Tovuti / Mitandao ya Kijamii</label>
-    <input type="url" id="companyWebsite" name="companyWebsite">
-  </div>
+  <label for="companyName">Jina la Kampuni / Biashara</label>
+  <input type="text" id="companyName" name="companyName">
 
-  <div id="shopFields" class="hidden">
-    <label for="shopName">Jina la Duka / Biashara</label>
-    <input type="text" id="shopName" name="shopName">
-    <label for="shopType">Aina ya Biashara</label>
-    <input type="text" id="shopType" name="shopType" placeholder="Mfano: Salon, Shamba, Duka">
-    <label for="shopAddress">Anuani / Landmark</label>
-    <input type="text" id="shopAddress" name="shopAddress">
-    <label for="shopPhone">Simu ya Biashara (WhatsApp inashauriwa)</label>
-    <input type="text" id="shopPhone" name="shopPhone">
-  </div>
+  <label for="businessReg">Nambari ya Usajili (BRELA/TIN) au NIDA</label>
+  <input type="text" id="businessReg" name="businessReg">
 
   <label for="fullName">Jina Kamili la Mtu Anayeweka Kazi</label>
   <input type="text" id="fullName" name="fullName" required>
 
-  <label for="idNumber">Nambari ya Kitambulisho (NIDA)</label>
-  <input type="text" id="idNumber" name="idNumber" required>
-
-  <p><b>Tafadhali ambatanisha picha ya Kitambulisho chako kwenye WhatsApp baada ya kutuma fomu.</b></p>
-
-  <label for="email">Barua Pepe Yako</label>
+  <label for="email">Barua Pepe</label>
   <input type="email" id="email" name="email" required>
 
-  <label for="phone">Simu Yako (WhatsApp inashauriwa)</label>
+  <label for="phone">Simu (WhatsApp inashauriwa)</label>
   <input type="text" id="phone" name="phone" required>
 
   <label for="jobTitle">Kichwa cha Kazi</label>
@@ -104,41 +81,13 @@
   <!-- Free Job Acknowledgment -->
   <label>
     <input type="checkbox" name="acknowledgeFree" required>
-    <b>Ninaelewa kuwa kupata kazi hapa ni bure na sitalipisha mtu yeyote.</b>  
-    <b>Nimeelezwa kuwa hatua kali za kisheria zitachukuliwa dhidi yangu endapo nitakwenda kinyume na sheria za AjiraFaster.</b>
+    <b>Ninaelewa kuwa kupata kazi kupitia AjiraFaster ni bure, na sitamtoza mtu yeyote.  
+    Hatua kali za kisheria zitachukuliwa endapo nitakwenda kinyume na sheria hizi.</b>
   </label>
 
   <button type="submit">📨 Tuma Kazi</button>
 
 </form>
 </div>
-
-<script>
-const employerType = document.getElementById('employerType');
-const companyFields = document.getElementById('companyFields');
-const shopFields = document.getElementById('shopFields');
-
-employerType.addEventListener('change', function() {
-  if(this.value === 'Registered Company'){
-    companyFields.classList.remove('hidden');
-    shopFields.classList.add('hidden');
-  } else if(this.value === 'Small Shop / Individual'){
-    shopFields.classList.remove('hidden');
-    companyFields.classList.add('hidden');
-  } else {
-    companyFields.classList.add('hidden');
-    shopFields.classList.add('hidden');
-  }
-});
-
-// WhatsApp Direct Submission
-document.getElementById('whatsappForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const whatsappNumber = '255787440458'; // namba yako ya WhatsApp
-  let message = `Aina ya Mwajiri: ${document.getElementById('employerType').value}%0AJina Kamili: ${document.getElementById('fullName').value}%0ANIDA: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0ASimu: ${document.getElementById('phone').value}%0AKichwa cha Kazi: ${document.getElementById('jobTitle').value}%0AMahali pa Kazi: ${document.getElementById('jobLocation').value}%0AAina ya Ajira: ${document.getElementById('employmentType').value}%0AMshahara: ${document.getElementById('salary').value}%0AMaelezo: ${document.getElementById('jobDescription').value}%0ATarehe ya Mwisho: ${document.getElementById('deadline').value}%0A*⚠️ Kumbuka: Kazi ni bure kwa waombaji. Hatua kali za kisheria zitachukuliwa dhidi ya yeyote atakayelipisha au kudanganya.*`;
-
-  window.location.href = `whatsapp://send?phone=${whatsappNumber}&text=${message}`;
-});
-</script>
 </body>
 </html>
