@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   body { font-family: Arial, sans-serif; background: #f2f2f2; margin:0; padding:0; }
   .container { max-width:600px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
   h2 { text-align:center; font-size:1.8rem; margin-bottom:10px;}
-  p.notice { color:red; font-weight:bold; font-size:1rem; }
+  p.notice { color:red; font-weight:bold; font-size:1rem; line-height:1.5; }
   label { display:block; margin:10px 0 5px; font-weight:bold; font-size:0.95rem;}
   input, select, textarea, button { width:100%; padding:12px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; font-size:1rem;}
   textarea { resize:vertical;}
@@ -23,9 +23,10 @@
 <div class="container">
 <h2>AjiraFaster Employer Job Posting</h2>
 <p class="notice">
-  **Tahadhari ya Kisheria:** Kazi ni bure kwa waombaji. Usilipishe au kudanganya mtu yeyote kupata kazi kupitia AjiraFaster.  
-  Kila mtu anayejaribu kutoza fedha au kudanganya waombaji atachukuliwa hatua kali za kisheria mara tu tukigundua.  
-  Kwa kutuma fomu hii, unathibitisha kuelewa na kukubali sheria hizi.
+  ⚠️ <b>Tahadhari ya Kisheria:</b> <b>Kazi ni bure</b> kwa waombaji.  
+  <b>Usilipishe</b> au <b>usidanganye mtu yeyote</b> kupata kazi kupitia <b>AjiraFaster</b>.  
+  Kila mtu atakayejihusisha na kutoza fedha au kudanganya waombaji atachukuliwa <b>hatua kali za kisheria</b> mara tu ikigundulika.  
+  Kwa kutuma fomu hii, unathibitisha kuwa <b>umekubaliana na sheria hizi</b>.
 </p>
 
 <form id="whatsappForm">
@@ -67,7 +68,7 @@
   <label for="idNumber">Nambari ya Kitambulisho (NIDA)</label>
   <input type="text" id="idNumber" name="idNumber" required>
 
-  <p>Tafadhali ambatanisha picha ya Kitambulisho chako kwenye WhatsApp baada ya kutuma fomu.</p>
+  <p><b>Tafadhali ambatanisha picha ya Kitambulisho chako kwenye WhatsApp baada ya kutuma fomu.</b></p>
 
   <label for="email">Barua Pepe Yako</label>
   <input type="email" id="email" name="email" required>
@@ -103,10 +104,11 @@
   <!-- Free Job Acknowledgment -->
   <label>
     <input type="checkbox" name="acknowledgeFree" required>
-    Ninaelewa kuwa kupata kazi hapa ni bure na sitalipisha mtu yeyote. Nimeelezwa kuwa hatua kali za kisheria zitachukuliwa dhidi ya yeyote anayejaribu kudanganya au kutoza fedha.
+    <b>Ninaelewa kuwa kupata kazi hapa ni bure na sitalipisha mtu yeyote.</b>  
+    <b>Nimeelezwa kuwa hatua kali za kisheria zitachukuliwa dhidi yangu endapo nitakwenda kinyume na sheria za AjiraFaster.</b>
   </label>
 
-  <button type="submit">Tuma Kazi</button>
+  <button type="submit">📨 Tuma Kazi</button>
 
 </form>
 </div>
@@ -129,13 +131,13 @@ employerType.addEventListener('change', function() {
   }
 });
 
-// WhatsApp Submission
+// WhatsApp Direct Submission
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
   e.preventDefault();
   const whatsappNumber = '255787440458'; // namba yako ya WhatsApp
-  let message = `Aina ya Mwajiri: ${document.getElementById('employerType').value}%0AJina Kamili: ${document.getElementById('fullName').value}%0ANIDA: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0ASimu: ${document.getElementById('phone').value}%0AKichwa cha Kazi: ${document.getElementById('jobTitle').value}%0AMahali pa Kazi: ${document.getElementById('jobLocation').value}%0AAina ya Ajira: ${document.getElementById('employmentType').value}%0AMshahara: ${document.getElementById('salary').value}%0AMaelezo: ${document.getElementById('jobDescription').value}%0ATarehe ya Mwisho: ${document.getElementById('deadline').value}%0A*Kazi ni bure kwa waombaji. Tafadhali ambatanisha picha ya Kitambulisho kwenye WhatsApp. Hatua kali za kisheria zitachukuliwa dhidi ya yeyote anayejaribu kudanganya au kutoza fedha.*`;
+  let message = `Aina ya Mwajiri: ${document.getElementById('employerType').value}%0AJina Kamili: ${document.getElementById('fullName').value}%0ANIDA: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0ASimu: ${document.getElementById('phone').value}%0AKichwa cha Kazi: ${document.getElementById('jobTitle').value}%0AMahali pa Kazi: ${document.getElementById('jobLocation').value}%0AAina ya Ajira: ${document.getElementById('employmentType').value}%0AMshahara: ${document.getElementById('salary').value}%0AMaelezo: ${document.getElementById('jobDescription').value}%0ATarehe ya Mwisho: ${document.getElementById('deadline').value}%0A*⚠️ Kumbuka: Kazi ni bure kwa waombaji. Hatua kali za kisheria zitachukuliwa dhidi ya yeyote atakayelipisha au kudanganya.*`;
 
-  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+  window.location.href = `whatsapp://send?phone=${whatsappNumber}&text=${message}`;
 });
 </script>
 </body>
