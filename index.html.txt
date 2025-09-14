@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employer Job Posting</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  input, select, textarea, button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    background: #0B3D91; /* AjiraFaster dark blue */
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background: #092f6d;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 15px;
+      margin: 10px;
+    }
+
+    input, select, textarea, button {
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Employer Job Posting</h2>
+  <form action="https://formspree.io/f/xeoldyjg" method="POST" enctype="multipart/form-data">
+
+    <!-- Employer Type -->
+    <label for="employerType">Employer Type</label>
+    <select id="employerType" name="employerType" required>
+      <option value="">--Select--</option>
+      <option value="Registered Company">Registered Company</option>
+      <option value="Small Shop / Individual">Small Shop / Individual</option>
+    </select>
+
+    <!-- Registered Company Fields -->
+    <div id="companyFields" class="hidden">
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" name="companyName">
+
+      <label for="businessReg">Business Registration Number (BRELA/TIN)</label>
+      <input type="text" id="businessReg" name="businessReg">
+
+      <label for="companyEmail">Company Email</label>
+      <input type="email" id="companyEmail" name="companyEmail">
+
+      <label for="companyPhone">Company Phone</label>
+      <input type="text" id="companyPhone" name="companyPhone">
+
+      <label for="companyWebsite">Company Website / Social Media</label>
+      <input type="url" id="companyWebsite" name="companyWebsite">
+    </div>
+
+    <!-- Small Shop / Individual Fields -->
+    <div id="shopFields" class="hidden">
+      <label for="shopName">Shop / Business Name</label>
+      <input type="text" id="shopName" name="shopName">
+
+      <label for="shopType">Business Type</label>
+      <input type="text" id="shopType" name="shopType" placeholder="e.g., Salon, Farm, Retail">
+
+      <label for="shopAddress">Business Address / Landmark</label>
+      <input type="text" id="shopAddress" name="shopAddress">
+
+      <label for="shopPhone">Business Phone (WhatsApp preferred)</label>
+      <input type="text" id="shopPhone" name="shopPhone">
+
+      <label for="shopPhoto">Optional: Upload Shop Photo</label>
+      <input type="file" id="shopPhoto" name="shopPhoto" accept="image/*">
+    </div>
+
+    <!-- Common Fields -->
+    <label for="fullName">Your Full Name</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="idNumber">National ID Number (NIDA)</label>
+    <input type="text" id="idNumber" name="idNumber" required>
+
+    <label for="idUploadFront">Upload National ID (Front)</label>
+    <input type="file" id="idUploadFront" name="idUploadFront" accept=".jpg,.jpeg,.png,.pdf" required>
+
+    <label for="idUploadBack">Upload National ID (Back)</label>
+    <input type="file" id="idUploadBack" name="idUploadBack" accept=".jpg,.jpeg,.png,.pdf" required>
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Your Phone Number (WhatsApp preferred)</label>
+    <input type="text" id="phone" name="phone" required>
+
+    <!-- Job Posting -->
+    <label for="jobTitle">Job Title</label>
+    <input type="text" id="jobTitle" name="jobTitle" required>
+
+    <label for="jobLocation">Job Location</label>
+    <input type="text" id="jobLocation" name="jobLocation" required>
+
+    <label for="employmentType">Employment Type</label>
+    <select id="employmentType" name="employmentType" required>
+      <option value="">--Select--</option>
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time</option>
+      <option value="Internship">Internship</option>
+      <option value="Contract">Contract</option>
+      <option value="Remote">Remote</option>
+    </select>
+
+    <label for="salary">Salary Range (Optional)</label>
+    <input type="text" id="salary" name="salary">
+
+    <label for="jobDescription">Job Description</label>
+    <textarea id="jobDescription" name="jobDescription" rows="5" required></textarea>
+
+    <label for="deadline">Application Deadline</label>
+    <input type="date" id="deadline" name="deadline">
+
+    <!-- Payment Section -->
+    <label for="paymentCurrency">Payment Currency</label>
+    <select id="paymentCurrency" name="paymentCurrency" required>
+      <option value="">--Select--</option>
+      <option value="TZS 15,000">TZS 15,000</option>
+      <option value="USD 7">USD 7</option>
+    </select>
+
+    <!-- Confirmation -->
+    <p>I confirm that I will make the payment after submission.</p>
+    <input type="checkbox" name="confirmPayment" required>
+
+    <input type="hidden" name="_subject" value="New Job Submission">
+
+    <button type="submit">Submit Job</button>
+  </form>
+</div>
+
+<script>
+  const employerType = document.getElementById('employerType');
+  const companyFields = document.getElementById('companyFields');
+  const shopFields = document.getElementById('shopFields');
+
+  employerType.addEventListener('change', function() {
+    if(this.value === 'Registered Company') {
+      companyFields.classList.remove('hidden');
+      shopFields.classList.add('hidden');
+    } else if(this.value === 'Small Shop / Individual') {
+      shopFields.classList.remove('hidden');
+      companyFields.classList.add('hidden');
+    } else {
+      companyFields.classList.add('hidden');
+      shopFields.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>
