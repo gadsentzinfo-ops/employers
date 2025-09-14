@@ -129,7 +129,7 @@ employerType.addEventListener('change', function() {
 // WhatsApp Submission
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
   e.preventDefault();
-  const whatsappNumber = '255712345678'; // replace with your number
+  const whatsappNumber = '255787440458'; // your WhatsApp number
   let message = `Employer Type: ${document.getElementById('employerType').value}%0AFull Name: ${document.getElementById('fullName').value}%0ANID: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0APhone: ${document.getElementById('phone').value}%0AJob Title: ${document.getElementById('jobTitle').value}%0ALocation: ${document.getElementById('jobLocation').value}%0AEmployment Type: ${document.getElementById('employmentType').value}%0ASalary: ${document.getElementById('salary').value}%0ADescription: ${document.getElementById('jobDescription').value}%0ADeadline: ${document.getElementById('deadline').value}%0APayment: ${document.getElementById('paymentCurrency').value}%0A*Please attach your National ID images manually in WhatsApp*`;
 
   window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
