@@ -8,6 +8,7 @@
   body { font-family: Arial, sans-serif; background: #f2f2f2; margin:0; padding:0; }
   .container { max-width:600px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
   h2 { text-align:center; font-size:1.8rem; margin-bottom:20px;}
+  p.notice { color:red; font-weight:bold; }
   label { display:block; margin:10px 0 5px; font-weight:bold; font-size:0.95rem;}
   input, select, textarea, button { width:100%; padding:12px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; font-size:1rem;}
   textarea { resize:vertical;}
@@ -21,6 +22,9 @@
 
 <div class="container">
 <h2>Employer Job Posting</h2>
+<p class="notice">
+  Notice: Posting and applying for jobs is completely FREE. Anyone requesting payment to get a job will be handled legally.
+</p>
 <form id="whatsappForm">
 
   <label for="employerType">Employer Type</label>
@@ -93,15 +97,11 @@
   <label for="deadline">Application Deadline</label>
   <input type="date" id="deadline" name="deadline">
 
-  <label for="paymentCurrency">Payment Currency</label>
-  <select id="paymentCurrency" name="paymentCurrency" required>
-    <option value="">--Select--</option>
-    <option value="TZS 15,000">TZS 15,000</option>
-    <option value="USD 7">USD 7</option>
-  </select>
-
-  <p>I confirm that I will make the payment after submission.</p>
-  <input type="checkbox" name="confirmPayment" required>
+  <!-- Free Job Acknowledgment -->
+  <label>
+    <input type="checkbox" name="acknowledgeFree" required>
+    I understand that applying for or posting a job is free and I will not pay anyone to get a job.
+  </label>
 
   <button type="submit">Submit Job</button>
 
@@ -130,7 +130,7 @@ employerType.addEventListener('change', function() {
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
   e.preventDefault();
   const whatsappNumber = '255787440458'; // your WhatsApp number
-  let message = `Employer Type: ${document.getElementById('employerType').value}%0AFull Name: ${document.getElementById('fullName').value}%0ANID: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0APhone: ${document.getElementById('phone').value}%0AJob Title: ${document.getElementById('jobTitle').value}%0ALocation: ${document.getElementById('jobLocation').value}%0AEmployment Type: ${document.getElementById('employmentType').value}%0ASalary: ${document.getElementById('salary').value}%0ADescription: ${document.getElementById('jobDescription').value}%0ADeadline: ${document.getElementById('deadline').value}%0APayment: ${document.getElementById('paymentCurrency').value}%0A*Please attach your National ID images manually in WhatsApp*`;
+  let message = `Employer Type: ${document.getElementById('employerType').value}%0AFull Name: ${document.getElementById('fullName').value}%0ANID: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0APhone: ${document.getElementById('phone').value}%0AJob Title: ${document.getElementById('jobTitle').value}%0ALocation: ${document.getElementById('jobLocation').value}%0AEmployment Type: ${document.getElementById('employmentType').value}%0ASalary: ${document.getElementById('salary').value}%0ADescription: ${document.getElementById('jobDescription').value}%0ADeadline: ${document.getElementById('deadline').value}%0A*This job is FREE. Please attach National ID images manually in WhatsApp*`;
 
   window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 });
