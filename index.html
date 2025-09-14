@@ -5,184 +5,107 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Employer Job Posting</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    max-width: 600px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    font-size: 0.95rem;
-  }
-
-  input, select, textarea, button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 1rem;
-  }
-
-  textarea {
-    resize: vertical;
-  }
-
-  button {
-    background: #0B3D91;
-    color: #fff;
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    margin-top: 20px;
-  }
-
-  button:hover {
-    background: #092f6d;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  @media (max-width: 480px) {
-    .container {
-      padding: 15px;
-      margin: 10px;
-    }
-
-    input, select, textarea, button {
-      padding: 10px;
-      font-size: 1rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-  }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; margin:0; padding:0; }
+  .container { max-width:600px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+  h2 { text-align:center; font-size:1.8rem; margin-bottom:20px;}
+  label { display:block; margin:10px 0 5px; font-weight:bold; font-size:0.95rem;}
+  input, select, textarea, button { width:100%; padding:12px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; font-size:1rem;}
+  textarea { resize:vertical;}
+  button { background:#0B3D91; color:#fff; padding:14px; border:none; border-radius:6px; cursor:pointer; font-size:1.1rem; margin-top:20px;}
+  button:hover { background:#092f6d;}
+  .hidden { display:none;}
+  @media(max-width:480px){ .container{padding:15px;margin:10px;} input,select,textarea,button{padding:10px;font-size:1rem;} h2{font-size:1.5rem;} }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h2>Employer Job Posting</h2>
-  <form id="whatsappForm">
+<h2>Employer Job Posting</h2>
+<form id="whatsappForm">
 
-    <!-- Employer Type -->
-    <label for="employerType">Employer Type</label>
-    <select id="employerType" name="employerType" required>
-      <option value="">--Select--</option>
-      <option value="Registered Company">Registered Company</option>
-      <option value="Small Shop / Individual">Small Shop / Individual</option>
-    </select>
+  <label for="employerType">Employer Type</label>
+  <select id="employerType" name="employerType" required>
+    <option value="">--Select--</option>
+    <option value="Registered Company">Registered Company</option>
+    <option value="Small Shop / Individual">Small Shop / Individual</option>
+  </select>
 
-    <!-- Registered Company Fields -->
-    <div id="companyFields" class="hidden">
-      <label for="companyName">Company Name</label>
-      <input type="text" id="companyName" name="companyName">
+  <div id="companyFields" class="hidden">
+    <label for="companyName">Company Name</label>
+    <input type="text" id="companyName" name="companyName">
+    <label for="businessReg">Business Registration Number (BRELA/TIN)</label>
+    <input type="text" id="businessReg" name="businessReg">
+    <label for="companyEmail">Company Email</label>
+    <input type="email" id="companyEmail" name="companyEmail">
+    <label for="companyPhone">Company Phone</label>
+    <input type="text" id="companyPhone" name="companyPhone">
+    <label for="companyWebsite">Company Website / Social Media</label>
+    <input type="url" id="companyWebsite" name="companyWebsite">
+  </div>
 
-      <label for="businessReg">Business Registration Number (BRELA/TIN)</label>
-      <input type="text" id="businessReg" name="businessReg">
+  <div id="shopFields" class="hidden">
+    <label for="shopName">Shop / Business Name</label>
+    <input type="text" id="shopName" name="shopName">
+    <label for="shopType">Business Type</label>
+    <input type="text" id="shopType" name="shopType" placeholder="e.g., Salon, Farm, Retail">
+    <label for="shopAddress">Business Address / Landmark</label>
+    <input type="text" id="shopAddress" name="shopAddress">
+    <label for="shopPhone">Business Phone (WhatsApp preferred)</label>
+    <input type="text" id="shopPhone" name="shopPhone">
+  </div>
 
-      <label for="companyEmail">Company Email</label>
-      <input type="email" id="companyEmail" name="companyEmail">
+  <label for="fullName">Your Full Name</label>
+  <input type="text" id="fullName" name="fullName" required>
 
-      <label for="companyPhone">Company Phone</label>
-      <input type="text" id="companyPhone" name="companyPhone">
+  <label for="idNumber">National ID Number (NIDA)</label>
+  <input type="text" id="idNumber" name="idNumber" required>
 
-      <label for="companyWebsite">Company Website / Social Media</label>
-      <input type="url" id="companyWebsite" name="companyWebsite">
-    </div>
+  <p>Please attach your National ID images manually in WhatsApp after submitting this form.</p>
 
-    <!-- Small Shop / Individual Fields -->
-    <div id="shopFields" class="hidden">
-      <label for="shopName">Shop / Business Name</label>
-      <input type="text" id="shopName" name="shopName">
+  <label for="email">Your Email</label>
+  <input type="email" id="email" name="email" required>
 
-      <label for="shopType">Business Type</label>
-      <input type="text" id="shopType" name="shopType" placeholder="e.g., Salon, Farm, Retail">
+  <label for="phone">Your Phone Number (WhatsApp preferred)</label>
+  <input type="text" id="phone" name="phone" required>
 
-      <label for="shopAddress">Business Address / Landmark</label>
-      <input type="text" id="shopAddress" name="shopAddress">
+  <label for="jobTitle">Job Title</label>
+  <input type="text" id="jobTitle" name="jobTitle" required>
 
-      <label for="shopPhone">Business Phone (WhatsApp preferred)</label>
-      <input type="text" id="shopPhone" name="shopPhone">
-    </div>
+  <label for="jobLocation">Job Location</label>
+  <input type="text" id="jobLocation" name="jobLocation" required>
 
-    <!-- Common Fields -->
-    <label for="fullName">Your Full Name</label>
-    <input type="text" id="fullName" name="fullName" required>
+  <label for="employmentType">Employment Type</label>
+  <select id="employmentType" name="employmentType" required>
+    <option value="">--Select--</option>
+    <option value="Full-time">Full-time</option>
+    <option value="Part-time">Part-time</option>
+    <option value="Internship">Internship</option>
+    <option value="Contract">Contract</option>
+    <option value="Remote">Remote</option>
+  </select>
 
-    <label for="idNumber">National ID Number (NIDA)</label>
-    <input type="text" id="idNumber" name="idNumber" required>
+  <label for="salary">Salary Range (Optional)</label>
+  <input type="text" id="salary" name="salary">
 
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="email" required>
+  <label for="jobDescription">Job Description</label>
+  <textarea id="jobDescription" name="jobDescription" rows="5" required></textarea>
 
-    <label for="phone">Your Phone Number (WhatsApp preferred)</label>
-    <input type="text" id="phone" name="phone" required>
+  <label for="deadline">Application Deadline</label>
+  <input type="date" id="deadline" name="deadline">
 
-    <!-- Job Posting -->
-    <label for="jobTitle">Job Title</label>
-    <input type="text" id="jobTitle" name="jobTitle" required>
+  <label for="paymentCurrency">Payment Currency</label>
+  <select id="paymentCurrency" name="paymentCurrency" required>
+    <option value="">--Select--</option>
+    <option value="TZS 15,000">TZS 15,000</option>
+    <option value="USD 7">USD 7</option>
+  </select>
 
-    <label for="jobLocation">Job Location</label>
-    <input type="text" id="jobLocation" name="jobLocation" required>
+  <p>I confirm that I will make the payment after submission.</p>
+  <input type="checkbox" name="confirmPayment" required>
 
-    <label for="employmentType">Employment Type</label>
-    <select id="employmentType" name="employmentType" required>
-      <option value="">--Select--</option>
-      <option value="Full-time">Full-time</option>
-      <option value="Part-time">Part-time</option>
-      <option value="Internship">Internship</option>
-      <option value="Contract">Contract</option>
-      <option value="Remote">Remote</option>
-    </select>
+  <button type="submit">Submit Job</button>
 
-    <label for="salary">Salary Range (Optional)</label>
-    <input type="text" id="salary" name="salary">
-
-    <label for="jobDescription">Job Description</label>
-    <textarea id="jobDescription" name="jobDescription" rows="5" required></textarea>
-
-    <label for="deadline">Application Deadline</label>
-    <input type="date" id="deadline" name="deadline">
-
-    <!-- Payment Section -->
-    <label for="paymentCurrency">Payment Currency</label>
-    <select id="paymentCurrency" name="paymentCurrency" required>
-      <option value="">--Select--</option>
-      <option value="TZS 15,000">TZS 15,000</option>
-      <option value="USD 7">USD 7</option>
-    </select>
-
-    <!-- Confirmation -->
-    <p>I confirm that I will make the payment after submission.</p>
-    <input type="checkbox" name="confirmPayment" required>
-
-    <button type="submit">Submit Job</button>
-  </form>
+</form>
 </div>
 
 <script>
@@ -191,10 +114,10 @@ const companyFields = document.getElementById('companyFields');
 const shopFields = document.getElementById('shopFields');
 
 employerType.addEventListener('change', function() {
-  if(this.value === 'Registered Company') {
+  if(this.value === 'Registered Company'){
     companyFields.classList.remove('hidden');
     shopFields.classList.add('hidden');
-  } else if(this.value === 'Small Shop / Individual') {
+  } else if(this.value === 'Small Shop / Individual'){
     shopFields.classList.remove('hidden');
     companyFields.classList.add('hidden');
   } else {
@@ -203,24 +126,14 @@ employerType.addEventListener('change', function() {
   }
 });
 
-// WhatsApp submit
+// WhatsApp Submission
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
   e.preventDefault();
+  const whatsappNumber = '255712345678'; // replace with your number
+  let message = `Employer Type: ${document.getElementById('employerType').value}%0AFull Name: ${document.getElementById('fullName').value}%0ANID: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0APhone: ${document.getElementById('phone').value}%0AJob Title: ${document.getElementById('jobTitle').value}%0ALocation: ${document.getElementById('jobLocation').value}%0AEmployment Type: ${document.getElementById('employmentType').value}%0ASalary: ${document.getElementById('salary').value}%0ADescription: ${document.getElementById('jobDescription').value}%0ADeadline: ${document.getElementById('deadline').value}%0APayment: ${document.getElementById('paymentCurrency').value}%0A*Please attach your National ID images manually in WhatsApp*`;
 
-  const phoneNumber = '255712345678'; // replace with your WhatsApp number
-  const employer = document.getElementById('employerType').value;
-  const fullName = document.getElementById('fullName').value;
-  const idNumber = document.getElementById('idNumber').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const jobTitle = document.getElementById('jobTitle').value;
-  const jobLocation = document.getElementById('jobLocation').value;
-  const employmentType = document.getElementById('employmentType').value;
-  const salary = document.getElementById('salary').value;
-  const jobDescription = document.getElementById('jobDescription').value;
-  const deadline = document.getElementById('deadline').value;
-  const paymentCurrency = document.getElementById('paymentCurrency').value;
-
-  let message = `Employer Type: ${employer}%0AFull Name: ${fullName}%0ANID: ${idNumber}%0AEmail: ${email}%0APhone: ${phone}%0AJob Title: ${jobTitle}%0ALocation: ${jobLocation}%0AEmployment Type: ${employmentType}%0ASalary: ${salary}%0ADescription: ${jobDescription}%0ADeadline: ${deadline}%0APayment: ${paymentCurrency}`;
-
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+});
+</script>
+</body>
+</html>
