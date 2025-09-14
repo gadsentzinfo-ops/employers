@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employer Job Posting</title>
+<title>AjiraFaster Employer Job Posting</title>
 <style>
   body { font-family: Arial, sans-serif; background: #f2f2f2; margin:0; padding:0; }
   .container { max-width:600px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-  h2 { text-align:center; font-size:1.8rem; margin-bottom:20px;}
-  p.notice { color:red; font-weight:bold; }
+  h2 { text-align:center; font-size:1.8rem; margin-bottom:10px;}
+  p.notice { color:red; font-weight:bold; font-size:1rem; }
   label { display:block; margin:10px 0 5px; font-weight:bold; font-size:0.95rem;}
   input, select, textarea, button { width:100%; padding:12px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; font-size:1rem;}
   textarea { resize:vertical;}
@@ -21,89 +21,92 @@
 <body>
 
 <div class="container">
-<h2>Employer Job Posting</h2>
+<h2>AjiraFaster Employer Job Posting</h2>
 <p class="notice">
-  Notice: Posting and applying for jobs is completely FREE. Anyone requesting payment to get a job will be handled legally.
+  **Tahadhari ya Kisheria:** Kazi ni bure kwa waombaji. Usilipishe au kudanganya mtu yeyote kupata kazi kupitia AjiraFaster.  
+  Kila mtu anayejaribu kutoza fedha au kudanganya waombaji atachukuliwa hatua kali za kisheria mara tu tukigundua.  
+  Kwa kutuma fomu hii, unathibitisha kuelewa na kukubali sheria hizi.
 </p>
+
 <form id="whatsappForm">
 
-  <label for="employerType">Employer Type</label>
+  <label for="employerType">Aina ya Mwajiri</label>
   <select id="employerType" name="employerType" required>
-    <option value="">--Select--</option>
-    <option value="Registered Company">Registered Company</option>
-    <option value="Small Shop / Individual">Small Shop / Individual</option>
+    <option value="">--Chagua--</option>
+    <option value="Registered Company">Kampuni Iliyosajiliwa</option>
+    <option value="Small Shop / Individual">Duka / Mtu Binafsi</option>
   </select>
 
   <div id="companyFields" class="hidden">
-    <label for="companyName">Company Name</label>
+    <label for="companyName">Jina la Kampuni</label>
     <input type="text" id="companyName" name="companyName">
-    <label for="businessReg">Business Registration Number (BRELA/TIN)</label>
+    <label for="businessReg">Nambari ya Usajili (BRELA/TIN)</label>
     <input type="text" id="businessReg" name="businessReg">
-    <label for="companyEmail">Company Email</label>
+    <label for="companyEmail">Barua Pepe ya Kampuni</label>
     <input type="email" id="companyEmail" name="companyEmail">
-    <label for="companyPhone">Company Phone</label>
+    <label for="companyPhone">Simu ya Kampuni</label>
     <input type="text" id="companyPhone" name="companyPhone">
-    <label for="companyWebsite">Company Website / Social Media</label>
+    <label for="companyWebsite">Tovuti / Mitandao ya Kijamii</label>
     <input type="url" id="companyWebsite" name="companyWebsite">
   </div>
 
   <div id="shopFields" class="hidden">
-    <label for="shopName">Shop / Business Name</label>
+    <label for="shopName">Jina la Duka / Biashara</label>
     <input type="text" id="shopName" name="shopName">
-    <label for="shopType">Business Type</label>
-    <input type="text" id="shopType" name="shopType" placeholder="e.g., Salon, Farm, Retail">
-    <label for="shopAddress">Business Address / Landmark</label>
+    <label for="shopType">Aina ya Biashara</label>
+    <input type="text" id="shopType" name="shopType" placeholder="Mfano: Salon, Shamba, Duka">
+    <label for="shopAddress">Anuani / Landmark</label>
     <input type="text" id="shopAddress" name="shopAddress">
-    <label for="shopPhone">Business Phone (WhatsApp preferred)</label>
+    <label for="shopPhone">Simu ya Biashara (WhatsApp inashauriwa)</label>
     <input type="text" id="shopPhone" name="shopPhone">
   </div>
 
-  <label for="fullName">Your Full Name</label>
+  <label for="fullName">Jina Kamili la Mtu Anayeweka Kazi</label>
   <input type="text" id="fullName" name="fullName" required>
 
-  <label for="idNumber">National ID Number (NIDA)</label>
+  <label for="idNumber">Nambari ya Kitambulisho (NIDA)</label>
   <input type="text" id="idNumber" name="idNumber" required>
 
-  <p>Please attach your National ID images manually in WhatsApp after submitting this form.</p>
+  <p>Tafadhali ambatanisha picha ya Kitambulisho chako kwenye WhatsApp baada ya kutuma fomu.</p>
 
-  <label for="email">Your Email</label>
+  <label for="email">Barua Pepe Yako</label>
   <input type="email" id="email" name="email" required>
 
-  <label for="phone">Your Phone Number (WhatsApp preferred)</label>
+  <label for="phone">Simu Yako (WhatsApp inashauriwa)</label>
   <input type="text" id="phone" name="phone" required>
 
-  <label for="jobTitle">Job Title</label>
+  <label for="jobTitle">Kichwa cha Kazi</label>
   <input type="text" id="jobTitle" name="jobTitle" required>
 
-  <label for="jobLocation">Job Location</label>
+  <label for="jobLocation">Mahali pa Kazi</label>
   <input type="text" id="jobLocation" name="jobLocation" required>
 
-  <label for="employmentType">Employment Type</label>
+  <label for="employmentType">Aina ya Ajira</label>
   <select id="employmentType" name="employmentType" required>
-    <option value="">--Select--</option>
-    <option value="Full-time">Full-time</option>
-    <option value="Part-time">Part-time</option>
-    <option value="Internship">Internship</option>
-    <option value="Contract">Contract</option>
-    <option value="Remote">Remote</option>
+    <option value="">--Chagua--</option>
+    <option value="Full-time">Muda Kamili</option>
+    <option value="Part-time">Sehemu ya Muda</option>
+    <option value="Internship">Praktiki / Internship</option>
+    <option value="Contract">Mkataba</option>
+    <option value="Remote">Kazi ya Mbali</option>
   </select>
 
-  <label for="salary">Salary Range (Optional)</label>
+  <label for="salary">Kiwango cha Mshahara (Hiari)</label>
   <input type="text" id="salary" name="salary">
 
-  <label for="jobDescription">Job Description</label>
+  <label for="jobDescription">Maelezo ya Kazi</label>
   <textarea id="jobDescription" name="jobDescription" rows="5" required></textarea>
 
-  <label for="deadline">Application Deadline</label>
+  <label for="deadline">Tarehe ya Mwisho wa Maombi</label>
   <input type="date" id="deadline" name="deadline">
 
   <!-- Free Job Acknowledgment -->
   <label>
     <input type="checkbox" name="acknowledgeFree" required>
-    I understand that applying for or posting a job is free and I will not pay anyone to get a job.
+    Ninaelewa kuwa kupata kazi hapa ni bure na sitalipisha mtu yeyote. Nimeelezwa kuwa hatua kali za kisheria zitachukuliwa dhidi ya yeyote anayejaribu kudanganya au kutoza fedha.
   </label>
 
-  <button type="submit">Submit Job</button>
+  <button type="submit">Tuma Kazi</button>
 
 </form>
 </div>
@@ -129,8 +132,8 @@ employerType.addEventListener('change', function() {
 // WhatsApp Submission
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
   e.preventDefault();
-  const whatsappNumber = '255787440458'; // your WhatsApp number
-  let message = `Employer Type: ${document.getElementById('employerType').value}%0AFull Name: ${document.getElementById('fullName').value}%0ANID: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0APhone: ${document.getElementById('phone').value}%0AJob Title: ${document.getElementById('jobTitle').value}%0ALocation: ${document.getElementById('jobLocation').value}%0AEmployment Type: ${document.getElementById('employmentType').value}%0ASalary: ${document.getElementById('salary').value}%0ADescription: ${document.getElementById('jobDescription').value}%0ADeadline: ${document.getElementById('deadline').value}%0A*This job is FREE. Please attach National ID images manually in WhatsApp*`;
+  const whatsappNumber = '255787440458'; // namba yako ya WhatsApp
+  let message = `Aina ya Mwajiri: ${document.getElementById('employerType').value}%0AJina Kamili: ${document.getElementById('fullName').value}%0ANIDA: ${document.getElementById('idNumber').value}%0AEmail: ${document.getElementById('email').value}%0ASimu: ${document.getElementById('phone').value}%0AKichwa cha Kazi: ${document.getElementById('jobTitle').value}%0AMahali pa Kazi: ${document.getElementById('jobLocation').value}%0AAina ya Ajira: ${document.getElementById('employmentType').value}%0AMshahara: ${document.getElementById('salary').value}%0AMaelezo: ${document.getElementById('jobDescription').value}%0ATarehe ya Mwisho: ${document.getElementById('deadline').value}%0A*Kazi ni bure kwa waombaji. Tafadhali ambatanisha picha ya Kitambulisho kwenye WhatsApp. Hatua kali za kisheria zitachukuliwa dhidi ya yeyote anayejaribu kudanganya au kutoza fedha.*`;
 
   window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 });
