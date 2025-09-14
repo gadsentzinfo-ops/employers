@@ -48,7 +48,7 @@
   }
 
   button {
-    background: #0B3D91; /* AjiraFaster dark blue */
+    background: #0B3D91;
     color: #fff;
     padding: 14px;
     border: none;
@@ -87,7 +87,7 @@
 
 <div class="container">
   <h2>Employer Job Posting</h2>
-  <form action="https://formspree.io/f/xeoldyjg" method="POST" enctype="multipart/form-data">
+  <form id="whatsappForm">
 
     <!-- Employer Type -->
     <label for="employerType">Employer Type</label>
@@ -128,9 +128,6 @@
 
       <label for="shopPhone">Business Phone (WhatsApp preferred)</label>
       <input type="text" id="shopPhone" name="shopPhone">
-
-      <label for="shopPhoto">Optional: Upload Shop Photo</label>
-      <input type="file" id="shopPhoto" name="shopPhoto" accept="image/*">
     </div>
 
     <!-- Common Fields -->
@@ -139,12 +136,6 @@
 
     <label for="idNumber">National ID Number (NIDA)</label>
     <input type="text" id="idNumber" name="idNumber" required>
-
-    <label for="idUploadFront">Upload National ID (Front)</label>
-    <input type="file" id="idUploadFront" name="idUploadFront" accept=".jpg,.jpeg,.png,.pdf" required>
-
-    <label for="idUploadBack">Upload National ID (Back)</label>
-    <input type="file" id="idUploadBack" name="idUploadBack" accept=".jpg,.jpeg,.png,.pdf" required>
 
     <label for="email">Your Email</label>
     <input type="email" id="email" name="email" required>
@@ -190,30 +181,46 @@
     <p>I confirm that I will make the payment after submission.</p>
     <input type="checkbox" name="confirmPayment" required>
 
-    <input type="hidden" name="_subject" value="New Job Submission">
-
     <button type="submit">Submit Job</button>
   </form>
 </div>
 
 <script>
-  const employerType = document.getElementById('employerType');
-  const companyFields = document.getElementById('companyFields');
-  const shopFields = document.getElementById('shopFields');
+const employerType = document.getElementById('employerType');
+const companyFields = document.getElementById('companyFields');
+const shopFields = document.getElementById('shopFields');
 
-  employerType.addEventListener('change', function() {
-    if(this.value === 'Registered Company') {
-      companyFields.classList.remove('hidden');
-      shopFields.classList.add('hidden');
-    } else if(this.value === 'Small Shop / Individual') {
-      shopFields.classList.remove('hidden');
-      companyFields.classList.add('hidden');
-    } else {
-      companyFields.classList.add('hidden');
-      shopFields.classList.add('hidden');
-    }
-  });
-</script>
-</body>
-</html>
+employerType.addEventListener('change', function() {
+  if(this.value === 'Registered Company') {
+    companyFields.classList.remove('hidden');
+    shopFields.classList.add('hidden');
+  } else if(this.value === 'Small Shop / Individual') {
+    shopFields.classList.remove('hidden');
+    companyFields.classList.add('hidden');
+  } else {
+    companyFields.classList.add('hidden');
+    shopFields.classList.add('hidden');
+  }
+});
 
+// WhatsApp submit
+document.getElementById('whatsappForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const phoneNumber = '255712345678'; // replace with your WhatsApp number
+  const employer = document.getElementById('employerType').value;
+  const fullName = document.getElementById('fullName').value;
+  const idNumber = document.getElementById('idNumber').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const jobTitle = document.getElementById('jobTitle').value;
+  const jobLocation = document.getElementById('jobLocation').value;
+  const employmentType = document.getElementById('employmentType').value;
+  const salary = document.getElementById('salary').value;
+  const jobDescription = document.getElementById('jobDescription').value;
+  const deadline = document.getElementById('deadline').value;
+  const paymentCurrency = document.getElementById('paymentCurrency').value;
+
+  let message = `Employer Type: ${employer}%0AFull Name: ${fullName}%0ANID: ${idNumber}%0AEmail: ${email}%0APhone: ${phone}%0AJob Title: ${jobTitle}%0ALocation: ${jobLocation}%0AEmployment Type: ${employmentType}%0ASalary: ${salary}%0ADescription: ${jobDescription}%0ADeadline: ${deadline}%0APayment: ${paymentCurrency}`;
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${
